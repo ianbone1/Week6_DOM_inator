@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./scripts/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css"/>
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+  <title>Animals</title>
+</head>
+<body>
+  <h1>Pet Inventory</h1>
+  <div class="input_wrapper">
+    <form id="new_pet_form">
+
+      <div class="input_row_wrapper">
+        <label class="data_label" for="pet_name">Pet Name:</label>
+        <input class="data_input" type="text" id="pet_name" required/>
+      </div>
+
+      <div class="input_row_wrapper">
+        <label class="data_label" for="pet_type">Pet Type:</label>
+        <input class="data_input" type="text" id="pet_type" required/>
+      </div>
+
+      <div class="input_row_wrapper">
+        <label class="data_label" for="pet_birthday">Pet Birthday:</label>
+        <input class="data_input" type="date" id="pet_birthday" required/>
+      </div>
+
+      <div class="input_row_wrapper">
+        <input class="data_input" type="submit" value="Add To List"/>
+      </div>
+
+    </form>
+
+    <div class="table_wrapper">
+      <table>
+        <tbody>
+          <tr id="table_header_row">
+            <th>Pet Name</th>
+            <th>Type</th>
+            <th>Birthday</th>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <button type="button" name="del_button" id="del_button">Delete List</button>
+
+  </div>
+</body>
+</html>
