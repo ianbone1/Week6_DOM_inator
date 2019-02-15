@@ -10,33 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+const buildChild = function(theParentElement, theNewElementType, theData){
+  const newElement = document.createElement(theNewElementType);
+  newElement.textContent = theData;
+  theParentElement.appendChild(newElement);
+};
+
+
 const handleFormSubmit = function(event){
   event.preventDefault(); // thi prevents the form being submitted back via HTTP
-  //find table Body
   const tableBody= document.querySelector('tbody');
-  // Create a new row item
   const tableRow = document.createElement('tr');
-  // Create the data elements and append to the Row item
-  const tdName = document.createElement('td');
-  tdName.textContent = this.pet_name.value;
-  tableRow.appendChild(tdName);
-
-  const tdType = document.createElement('td');
-  tdType.textContent = this.pet_type.value;
-  tableRow.appendChild(tdType);
-
-  const tdBirthday = document.createElement('td');
-  tdBirthday.textContent = this.pet_birthday.value;
-  tableRow.appendChild(tdBirthday);
-
-  console.log(tableRow);
-  //Now Append the Row Item to the Table Body
+  buildChild(tableRow, 'td', this.pet_name.value);
+  buildChild(tableRow, 'td', this.pet_type.value);
+  buildChild(tableRow, 'td', this.pet_birthday.value);
   tableBody.appendChild(tableRow);
-
-  //reset the form back to empty fields
-  // this.reset();
-
-
 }
 
 const handleDeleteClick = function(event){
